@@ -8,6 +8,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Production',
+      template: './src/template.html',
     }),
   ],
   output: {
@@ -22,8 +23,15 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext][query]', // This ensures images go into the dist/images/ folder
+        },
       },
     ],
   },
