@@ -1,7 +1,7 @@
 function useIndex(max) {
   let currentIndex = 0;
 
-  const getCurrentIndex = () => current;
+  const getCurrentIndex = () => currentIndex;
 
   const setCurrentIndex = (newIndex) => {
     if (newIndex >= 0 && newIndex <= max) {
