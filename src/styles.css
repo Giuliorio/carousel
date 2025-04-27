@@ -1,0 +1,33 @@
+:root {
+  --numberOfSlides: 3;
+}
+
+body {
+  background-color: black;
+}
+
+.carousel {
+  height: 60vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+.carousel .frame {
+  aspect-ratio: 3 / 5;
+  overflow: hidden;
+}
+
+.carousel .frame,
+.carousel .track,
+.carousel .slide,
+.carousel .slide img {
+  height: 100%;
+}
+
+.carousel .track {
+  display: flex;
+  justify-content: center;
+
+  width: calc(100% * var(--numberOfSlides));
+}
