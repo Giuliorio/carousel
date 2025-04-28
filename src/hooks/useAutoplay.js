@@ -17,7 +17,7 @@ function useAutoplay(repeatable = () => {}, interval = 5000) {
     resetInterval();
   }
 
-  const cleanup = listenAndForget(window, 'popstate', () => {
+  const cleanup = listenAndForget(window, 'beforeunload', () => {
     clearInterval(intervalID);
     cleanup();
   });
