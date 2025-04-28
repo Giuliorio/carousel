@@ -1,4 +1,4 @@
-import listenAndForget from './helpers/listenAndForget';
+import listenAndForget from '../helpers/listenAndForget';
 
 function useAutoplay(repeatable = () => {}, interval = 5000) {
   let intervalID;
