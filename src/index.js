@@ -1,7 +1,31 @@
 import './reset.css';
 import './styles.css';
+
+import image1 from './images/image1.jpg';
+import image2 from './images/image2.jpg';
+import image3 from './images/image3.jpg';
+
 import useAutoplay from './hooks/useAutoplay';
 import useIndex from './hooks/useIndex';
+import createCarouselElement from './createCarouselElement';
+
+const body = document.querySelector('body');
+body.appendChild(
+  createCarouselElement([
+    {
+      url: image1,
+      alt: 'Mountaintop Temple',
+    },
+    {
+      url: image2,
+      alt: 'Beautiful pagoda in a Japanese style town',
+    },
+    {
+      url: image3,
+      alt: 'Japanese market at night in fall',
+    },
+  ])
+);
 
 const slides = document.querySelectorAll('.slide');
 const track = document.querySelector('.track');
