@@ -1,0 +1,29 @@
+export function createElement(tag, options = {}) {
+  const {
+    className = '',
+    textContent = '',
+    attributes = {},
+    children = [],
+  } = options;
+
+  const element = document.createElement(tag);
+
+  if (typeof className === 'string') {
+    element.className = className;
+  }
+  if (Array.isArray(className)) {
+    element.classList.add(...className);
+  }
+
+  element.textContent = textContent;
+
+  Object.keys(attributes).forEach((attribute) => {
+    element.setAttribute(attribute, attributes[attribute]);
+  });
+
+  children.forEach((child) => {
+    element.appendChild(child);
+  });
+
+  return element;
+}
