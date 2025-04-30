@@ -1,8 +1,9 @@
 import { createElement } from './helpers/createElement';
 
-function createCarouselElement(images = []) {
+function createCarouselElement(images = [], properties) {
   const carousel = createElement('div', {
     className: 'carousel',
+    properties,
     children: [
       createPreviousButtonElement(),
       createFrameElement(images),

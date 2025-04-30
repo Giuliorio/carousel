@@ -1,11 +1,3 @@
-:root {
-  --numberOfSlides: 3;
-}
-
-body {
-  background-color: black;
-}
-
 .carousel {
   height: 60vh;
 

@@ -3,6 +3,7 @@ export function createElement(tag, options = {}) {
     className = '',
     textContent = '',
     attributes = {},
+    properties = {},
     children = [],
   } = options;
 
@@ -19,6 +20,10 @@ export function createElement(tag, options = {}) {
 
   Object.keys(attributes).forEach((attribute) => {
     element.setAttribute(attribute, attributes[attribute]);
+  });
+
+  Object.keys(properties).forEach((property) => {
+    element.style.setProperty(property, properties[property]);
   });
 
   children.forEach((child) => {

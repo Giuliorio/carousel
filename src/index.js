@@ -15,7 +15,9 @@ function createCarousel(parent, images = [], options = {}) {
   };
   const { autoplay } = deepMerge(defaultSettings, options);
 
-  parent.appendChild(createCarouselElement(images));
+  parent.appendChild(
+    createCarouselElement(images, { '--numberOfSlides': images.length })
+  );
 
   const slides = document.querySelectorAll('.slide');
   const track = document.querySelector('.track');
