@@ -22,6 +22,8 @@ function useAutoplay(repeatable = () => {}, interval = 5000) {
     cleanup();
   });
 
+  createInterval();
+
   return restartAutoplay;
 }
 
