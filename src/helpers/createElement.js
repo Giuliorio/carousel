@@ -2,6 +2,7 @@ export function createElement(tag, options = {}) {
   const {
     className = '',
     textContent = '',
+    innerHTML = '',
     attributes = {},
     properties = {},
     children = [],
@@ -17,6 +18,7 @@ export function createElement(tag, options = {}) {
   }
 
   element.textContent = textContent;
+  element.innerHTML = innerHTML;
 
   Object.keys(attributes).forEach((attribute) => {
     element.setAttribute(attribute, attributes[attribute]);

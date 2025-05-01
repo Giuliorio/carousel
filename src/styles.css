@@ -56,6 +56,28 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.carousel .nav {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.carousel .dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  padding: 0;
+}
+
 .carousel .frame,
 .carousel .track,
 .carousel .slide,
