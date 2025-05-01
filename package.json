@@ -9,12 +9,15 @@
     "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "keywords": [
-    "dropdown",
-    "vanilla js",
-    "ui",
+    "carousel",
+    "slider",
+    "image-carousel",
+    "javascript",
+    "vanilla-js",
     "component"
   ],
   "author": "Giulio Riondino <riondino@gmail.com>",
