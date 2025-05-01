@@ -6,6 +6,7 @@ export function createElement(tag, options = {}) {
     attributes = {},
     properties = {},
     children = [],
+    style = {},
   } = options;
 
   const element = document.createElement(tag);
@@ -27,6 +28,10 @@ export function createElement(tag, options = {}) {
   Object.keys(properties).forEach((property) => {
     element.style.setProperty(property, properties[property]);
   });
+
+  if (Object.keys(style).length > 0) {
+    Object.assign(element.style, style);
+  }
 
   children.forEach((child) => {
     element.appendChild(child);

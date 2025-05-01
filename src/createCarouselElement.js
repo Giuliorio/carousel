@@ -1,10 +1,10 @@
 import { createElement } from './helpers/createElement';
 
-function createCarouselElement(images = [], properties) {
+function createCarouselElement(images = [], properties, aspectRatio) {
   const carousel = createElement('div', {
     className: 'carousel',
     properties,
-    children: [createFrameElement(images)],
+    children: [createFrameElement(images, aspectRatio)],
   });
 
   return carousel;
@@ -34,9 +34,9 @@ function createNavigationElement(images) {
   const nav = createElement('div', {
     className: 'nav',
     children: [
-      ...images.map(() =>
+      ...images.map((_, index) =>
         createElement('button', {
-          className: 'dot',
+          className: ['dot', index === 0 && 'active'],
         })
       ),
     ],
@@ -45,7 +45,7 @@ function createNavigationElement(images) {
   return nav;
 }
 
-function createFrameElement(images) {
+function createFrameElement(images, aspectRatio) {
   const frame = createElement('div', {
     className: 'frame',
     children: [
@@ -54,6 +54,7 @@ function createFrameElement(images) {
       createNextButtonElement(),
       createNavigationElement(images),
     ],
+    style: { aspectRatio: aspectRatio },
   });
 
   return frame;
